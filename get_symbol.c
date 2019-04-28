@@ -109,7 +109,7 @@ int main(){
 				printf("S_LT\n");
 				break;
 			case S_NL:
-				printf("S_LN\n");
+				printf("S_NL\n");
 				break;
 			case S_EOF:
 				printf("S_EOF\n");
