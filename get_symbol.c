@@ -47,6 +47,13 @@ SYMBOL getsymb(char *word){
 						*w++ = c;
 						continue;
 				}
+			case GTGT:
+				if (c == '>'){
+					return S_GTGT;
+				}
+				ungetc(c,stdin);
+				return S_GT;
+
 			case INQUOTE:
 				switch (c){
 					case '\\' : 
@@ -85,7 +92,7 @@ SYMBOL getsymb(char *word){
 int main(){
 	char word[200];
 
-	while (1){
+	while (1)
 		switch(getsymb(word)){
 			case S_WORD:
 				printf("S_WORD<%s>\n", word);
@@ -116,7 +123,7 @@ int main(){
 				exit(0);
 		}
 	return 0;
-	}
+	
 }
 
 
